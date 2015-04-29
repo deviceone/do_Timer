@@ -34,6 +34,7 @@
 {
     //自定义的全局属性
     if(_isOn) dispatch_suspend(_timer);
+    _timer = nil;
 }
 #pragma mark -
 #pragma mark - 同步异步方法的实现
@@ -86,6 +87,7 @@
      dispatch_source_set_event_handler(_timer, ^()
      {
          NSLog(@"Timer %@", [NSThread currentThread]);
+         [self.EventCenter FireEvent:@"tick" :_invokeResult];
      });
      [self performSelector:@selector(onTimeStart:) withObject:_invokeResult afterDelay:[delay intValue]*1.0/1000];
  }
