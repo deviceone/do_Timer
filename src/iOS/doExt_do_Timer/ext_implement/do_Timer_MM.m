@@ -34,7 +34,8 @@
 {
     //自定义的全局属性
     if(_isOn) dispatch_suspend(_timer);
-    _timer = nil;
+    // 置为nil会闪退
+//    _timer = nil;
 }
 #pragma mark -
 #pragma mark - 同步异步方法的实现
