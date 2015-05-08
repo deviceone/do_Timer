@@ -41,9 +41,9 @@
 #pragma mark - 同步异步方法的实现
 /*
  1.参数节点
- doJsonNode *_dictParas = [parms objectAtIndex:0];
+ NSDictionary *_dictParas = [parms objectAtIndex:0];
  a.在节点中，获取对应的参数
- NSString *title = [_dictParas GetOneText:@"title" :@"" ];
+ NSString *title = [doJsonHelper GetOneText: _dictParas :@"title" :@"" ];
  说明：第一个参数为对象名，第二为默认值
  
  2.脚本运行时的引擎
@@ -69,7 +69,7 @@
 //同步
  - (void)start:(NSArray *)parms
  {
-//     doJsonNode *_dictParas = [parms objectAtIndex:0];
+//     NSDictionary *_dictParas = [parms objectAtIndex:0];
      doInvokeResult * _invokeResult = [parms objectAtIndex:2];
 //     id<doIScriptEngine> _scritEngine = [parms objectAtIndex:1];
      //自己的代码实现
@@ -101,7 +101,7 @@
 
  - (void)stop:(NSArray *)parms
  {
-//     doJsonNode *_dictParas = [parms objectAtIndex:0];
+//     NSDictionary *_dictParas = [parms objectAtIndex:0];
 //     id<doIScriptEngine> _scritEngine = [parms objectAtIndex:1];
      //自己的代码实现
      
